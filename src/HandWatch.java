@@ -89,8 +89,6 @@ public class HandWatch
                                     Y += 1;
                                     M = 1;
                                 }
-                                else
-                                    D += 1;
                                 break;
 
                         }
