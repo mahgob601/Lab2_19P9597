@@ -56,39 +56,38 @@ public class HandWatch
                         switch (updateState)
                         {
                             case "min":
+                                m += 1;
                                 if((m % 60 == 0) && m != 0)
                                 {
                                     h += 1;
                                     m = 0;
                                 }
-                                else
-                                    m += 1;
                                 break;
+
                             case "hour":
+                                h += 1;
                                 if((h % 24 == 0) && h != 0)
                                 {
                                     D += 1;
                                     h= 0;
                                 }
-                                else
-                                    h += 1;
                                 break;
 
                             case "day":
+                                D += 1;
                                 if((D % 31 == 0) && D != 0)
                                 {
                                     M += 1;
-                                    D = 0;
+                                    D = 1;
                                 }
-                                else
-                                    D += 1;
                                 break;
 
                             case "month":
-                                if((D % 31 == 0) && D != 0)
+                                M += 1;
+                                if((M % 12 == 0) && M != 0)
                                 {
-                                    M += 1;
-                                    D = 0;
+                                    Y += 1;
+                                    M = 1;
                                 }
                                 else
                                     D += 1;
