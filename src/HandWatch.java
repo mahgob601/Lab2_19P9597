@@ -1,11 +1,28 @@
 public class HandWatch
 {
-    public String modify(String changes)
+    public static void main(String[] args)
+    {
+        modify("abadcaaaaa");
+        System.out.println("\n");
+        modify("caaaa");
+        System.out.println("\n");
+        modify("cb");
+        System.out.println("\n");
+        modify("caaab");
+
+    }
+
+    public static void modify(String changes)
     {
         String state = "NORMAL";
         String state1 = "TIME";
         int m = 0, h = 0, D = 1, M = 1, Y = 2000;
         char[] inputArray = changes.toCharArray();
+
+        for(char x: inputArray)
+        {
+            System.out.println(x);
+        }
         String updateState = "min";
         String alarmState = "Alarm";
 
@@ -132,11 +149,19 @@ public class HandWatch
                                 break;
                         }
                     }
+                    else if(inp == 'd')
+                    {
+                        state = "NORMAL";
+                        state1 = "TIME";
+
+
+                    }
 
 
 
             }
         }
-        return ("lol");
+        System.out.println(Y + "-" + M + "-" + D);
+        System.out.println(h + ":" + m);
     }
 }
