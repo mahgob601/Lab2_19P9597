@@ -7,6 +7,7 @@ public class HandWatch
         int m = 0, h = 0, D = 1, M = 1, Y = 2000;
         char[] inputArray = changes.toCharArray();
         String updateState = "min";
+        String alarmState = "Alarm";
 
         for(char inp: inputArray)
         {
@@ -95,6 +96,43 @@ public class HandWatch
 
 
                     }
+
+                    else if(inp == 'a')
+                    {
+                        switch(updateState)
+                        {
+                            case "min":
+                                updateState = "hour";
+                                break;
+                            case "hour":
+                                updateState = "day";
+                                break;
+                            case "day":
+                                updateState = "month";
+                                break;
+                            case "month":
+                                updateState = "year";
+                                break;
+                            case "year":
+                                state = "NORMAL";
+                                break;
+                        }
+                    }
+
+                case "ALARM":
+                    if(inp == 'a')
+                    {
+                        switch(alarmState)
+                        {
+                            case "Alarm":
+                                alarmState = "Chime";
+                                break;
+                            case "Chime":
+                                alarmState = "Alarm";
+                                break;
+                        }
+                    }
+
 
 
             }
