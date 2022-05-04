@@ -8,7 +8,7 @@ public class HandWatch
         System.out.println("\n");
         modify("cb");
         System.out.println("\n");
-        modify("caaab");
+        modify("caaa");
 
     }
 
