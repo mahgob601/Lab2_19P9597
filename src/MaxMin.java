@@ -1,23 +1,24 @@
 public class MaxMin
 {
+    private double[] myarr;
 
-    public String findMinMax(double arr[])
+    public String findMinMax()
     {
-        int len = arr.length;
+        int len = myarr.length;
         if(len == 0)
             return("Error: Empty array");
         else
         {
-            double max = arr[0];
-            double min = arr[0];
+            double max = myarr[0];
+            double min = myarr[0];
             String max1;
             String min1;
             for(int i = 0; i < len; i++)
             {
-                if(arr[i] > max)
-                    max = arr[i];
-                else if(arr[i] < min)
-                    min = arr[i];
+                if(myarr[i] > max)
+                    max = myarr[i];
+                else if(myarr[i] < min)
+                    min = myarr[i];
             }
             if(max == (int) max)
             {
@@ -43,6 +44,12 @@ public class MaxMin
             return result;
 
         }
+
+    }
+
+    public void initArray(double[] arr)
+    {
+        myarr = arr;
 
     }
 }

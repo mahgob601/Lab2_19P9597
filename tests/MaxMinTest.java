@@ -1,16 +1,24 @@
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.Assert.*;
 
 public class MaxMinTest {
 
+    MaxMin tester;
+    @BeforeEach
+    public void before()
+    {
+        tester = new MaxMin();
+    }
+
     @Test
     public void findMinMaxCase1()
     {
         double[] testArr1 = {1,2,3,4,5,100,6,8,10,-1,0};
-        MaxMin tester1 = new MaxMin();
-        Assert.assertEquals("Should give Max: 100 ,Min: -1","Max: 100 ,Min: -1",tester1.findMinMax(testArr1));
+        tester.initArray(testArr1);
+        assertEquals("Max: 100 ,Min: -1",tester.findMinMax());
 
     }
 
@@ -18,8 +26,8 @@ public class MaxMinTest {
     public void findMinMaxCase2()
     {
         double[] testArr2 = {1,2,3,4,5,409.9,6,8,10,-500.89};
-        MaxMin tester2 = new MaxMin();
-        Assert.assertEquals("Should give Max: 409.9 ,Min: -500.89","Max: 409.9 ,Min: -500.89",tester2.findMinMax(testArr2));
+        tester.initArray(testArr2);
+        assertEquals("Max: 409.9 ,Min: -500.89",tester.findMinMax());
 
     }
 
@@ -27,8 +35,15 @@ public class MaxMinTest {
     public void findMinMaxEmptyArray()
     {
         double[] testArr3 = {};
-        MaxMin tester3 = new MaxMin();
-        Assert.assertEquals("Should give Error: Empty array","Error: Empty array",tester3.findMinMax(testArr3));
+        tester.initArray(testArr3);
+        assertEquals("Error: Empty array",tester.findMinMax());
 
     }
+
+    @AfterEach
+    public void after()
+    {
+        tester = null;
+    }
+
 }
