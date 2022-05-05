@@ -57,8 +57,6 @@ public class EvenOrOddTest {
 
     }
 
-
-
     @Test
     public void evenOddEvenNonInteger()
     {
