@@ -1,20 +1,7 @@
 public class HandWatch
 {
-    public static void main(String[] args)
-    {
-        // ADUP
-        modify("acaaaabb");
-        System.out.println("\n");
-        modify("aacbbabbbabbbabbbbababa");
-        System.out.println("\n");
 
-        // edge testing
-        modify("aacbababababacdbdba");
-
-
-    }
-
-    public static void modify(String changes)
+    public String modify(String changes)
     {
         String state = "NORMAL";
         String state1 = "TIME";
@@ -187,11 +174,8 @@ public class HandWatch
 
                     }
 
-
-
             }
         }
-        System.out.println(Y + "-" + M + "-" + D);
-        System.out.println(h + ":" + m);
+        return (Y + "-" + M + "-" + D + "\n" + h + ":" + m);
     }
 }
