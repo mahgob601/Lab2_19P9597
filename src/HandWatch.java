@@ -2,13 +2,11 @@ public class HandWatch
 {
     public static void main(String[] args)
     {
-        modify("abadcaaaaa");
+        modify("acaaaabb");
         System.out.println("\n");
-        modify("caaaa");
+        modify("aacbbabbbabbbabbbbababa");
         System.out.println("\n");
-        modify("cb");
-        System.out.println("\n");
-        modify("caaa");
+
 
     }
 
@@ -19,10 +17,7 @@ public class HandWatch
         int m = 0, h = 0, D = 1, M = 1, Y = 2000;
         char[] inputArray = changes.toCharArray();
 
-        for(char x: inputArray)
-        {
-            System.out.println(x);
-        }
+
         String updateState = "min";
         String alarmState = "Alarm";
 
@@ -64,7 +59,7 @@ public class HandWatch
                                 updateState = "year";
                                 break;
                             case "year":
-                                updateState = "month";
+                                state = "NORMAL";
                                 break;
 
                         }
@@ -77,8 +72,17 @@ public class HandWatch
                                 m += 1;
                                 if((m % 60 == 0) && m != 0)
                                 {
-                                    h += 1;
-                                    m = 0;
+                                    if(h == 23)
+                                    {
+                                        h = 0;
+                                        m = 0;
+                                    }
+                                    else
+                                    {
+                                        h += 1;
+                                        m = 0;
+                                    }
+
                                 }
                                 break;
 
@@ -86,8 +90,17 @@ public class HandWatch
                                 h += 1;
                                 if((h % 24 == 0) && h != 0)
                                 {
-                                    D += 1;
-                                    h= 0;
+                                    if(D == 31)
+                                    {
+                                        D = 1;
+                                        h = 0;
+                                    }
+                                    else
+                                    {
+                                        D += 1;
+                                        h= 0;
+                                    }
+
                                 }
                                 break;
 
@@ -106,6 +119,14 @@ public class HandWatch
                                 {
                                     Y += 1;
                                     M = 1;
+                                }
+                                break;
+
+                            case "year":
+                                Y += 1;
+                                if((Y % 100 == 0) && Y != 2000)
+                                {
+                                    Y += 2000;
                                 }
                                 break;
 
