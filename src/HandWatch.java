@@ -2,10 +2,14 @@ public class HandWatch
 {
     public static void main(String[] args)
     {
+        // ADUP
         modify("acaaaabb");
         System.out.println("\n");
         modify("aacbbabbbabbbabbbbababa");
         System.out.println("\n");
+
+        // edge testing
+        modify("aacbababababacdbdba");
 
 
     }
@@ -75,13 +79,12 @@ public class HandWatch
                                     if(h == 23)
                                     {
                                         h = 0;
-                                        m = 0;
                                     }
                                     else
                                     {
                                         h += 1;
-                                        m = 0;
                                     }
+                                    m = 0;
 
                                 }
                                 break;
@@ -93,13 +96,12 @@ public class HandWatch
                                     if(D == 31)
                                     {
                                         D = 1;
-                                        h = 0;
                                     }
                                     else
                                     {
                                         D += 1;
-                                        h= 0;
                                     }
+                                    h= 0;
 
                                 }
                                 break;
@@ -108,7 +110,14 @@ public class HandWatch
                                 D += 1;
                                 if((D % 31 == 0) && D != 0)
                                 {
-                                    M += 1;
+                                    if(M == 12)
+                                    {
+                                        M = 1;
+                                    }
+                                    else
+                                    {
+                                        M += 1;
+                                    }
                                     D = 1;
                                 }
                                 break;
